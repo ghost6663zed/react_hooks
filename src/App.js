@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [type, setType] = useState('users')
+
+    return (
+        <div>
+            <h1>Ресурс: {type}</h1>
+
+            <button onClick={() => setType('users')} className="btn btn-default">Пользователи</button>
+            <button onClick={() => setType('todo')} className="btn btn-default">todo</button>
+            <button onClick={() => setType('posts')} className="btn btn-default">посты</button>
+
+        </div>
+    )
 }
+
 
 export default App;
